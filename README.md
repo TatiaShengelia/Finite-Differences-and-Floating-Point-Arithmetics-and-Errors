@@ -13,6 +13,8 @@ overflow, violation of associative property etc.
 
    
 Results of 1:
+
+
 Round-off error arises because of approximation of square root. We tried same function twice but the second time it was after mathematical manipulations.
 f(x,y)= √(x^2+y^2)-x=y^2/(√(x^2+y^2)+x)
 As we can see in first case the result is 0.0 while in second case it is 5e-33. This happened because when x=10^16 and y=10^(-8), x^2+y^2≈x^2 because y^2 is negligible in comparison. Thus, in first case  √(x^2+y^2)-x becomes approximately zero and due to the limits of floating-point arithmetic, this results in a computed value of exactly 0. In second case, √(x^2+y^2 )+x≈2x, therefore our function becomes f(x,y)≈y^2/2x and if we put values of x and y in the function, we get (10^(-8))^2/(2*10^16)=5*10^(-33).
@@ -28,6 +30,8 @@ Associative property violation happens because value of z (which is 1) is so sma
 
 
 Results of 2:
+
+
 I have analyzed function: f(x,y)=(sin⁡(xy))/xy (but with condition that if either x = 0 or y = 0, the function equals to 1 because otherwise it would’ve been undefined and caused problem for the code)
 I have considered forward difference, backward difference, central difference and Richardson’s extrapolation as well as both d/dx and d/dy.
 
